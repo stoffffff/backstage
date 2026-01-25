@@ -84,7 +84,7 @@ catalog:
 
     # stoffffff/platform-engineering-with-backstage REGISTRATION
     - type: url
-      target: https://raw.githubusercontent.com/stoffffff/platform-engineering-with-backstage/refs/heads/main/catalog-info.yaml
+      target: https://github.com/stoffffff/platform-engineering-with-backstage/blob/main/catalog-info.yaml
       
     # Local example template
     - type: file
