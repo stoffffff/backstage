@@ -15,3 +15,19 @@ metadata:
 spec:
   type: team
   children: []
+---
+# DEV team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: developers
+spec:
+  type: team
+---
+# Marcos our new developer
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: Marcos
+spec:
+  memberOf: [developers]
