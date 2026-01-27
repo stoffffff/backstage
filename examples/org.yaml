@@ -41,3 +41,30 @@ metadata:
   name: Marcos
 spec:
   memberOf: [developers]
+---
+# Finance team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: finance-team
+spec:
+  type: team
+  children: []
+---
+# DBA team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: dba-team
+spec:
+  type: team
+  children: []
+---
+# Checkout team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: checkout-squad
+spec:
+  type: team
+  children: []

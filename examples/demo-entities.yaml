@@ -1,0 +1,26 @@
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: payments-processing
+  description: Everything related to money movement.
+spec:
+  owner: finance-team
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: checkout-workflow
+  description: Handles the end-to-end user checkout experience.
+spec:
+  owner: checkout-squad
+  domain: payments-processing # Links to the Domain above
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: checkout-db
+  description: Primary PostgreSQL instance for checkout transactions.
+spec:
+  type: database
+  owner: dba-team
+  system: checkout-workflow # Links to the System above

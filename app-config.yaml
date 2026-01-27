@@ -44,12 +44,12 @@ integrations:
     #   token: ${GHE_TOKEN}
 
 #proxy:
-  ### Example for how to add a proxy endpoint for the frontend.
-  ### A typical reason to do this is to handle HTTPS and CORS for internal services.
-  # endpoints:
-  #   '/test':
-  #     target: 'https://example.com'
-  #     changeOrigin: true
+### Example for how to add a proxy endpoint for the frontend.
+### A typical reason to do this is to handle HTTPS and CORS for internal services.
+# endpoints:
+#   '/test':
+#     target: 'https://example.com'
+#     changeOrigin: true
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
@@ -69,7 +69,7 @@ auth:
     guest: {}
 
 #scaffolder:
-  # see https://backstage.io/docs/features/software-templates/configuration for software template options
+# see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
   import:
@@ -82,10 +82,14 @@ catalog:
     - type: file
       target: ../../examples/entities.yaml
 
+    # Adding the new location of entities for demo purposes:
+    - type: file
+      target: ../../examples/demo-entities.yaml
+
     # stoffffff/platform-engineering-with-backstage REGISTRATION
     - type: url
       target: https://github.com/stoffffff/platform-engineering-with-backstage/blob/main/catalog-info.yaml
-      
+
     # Local example template
     - type: file
       target: ../../examples/template/template.yaml
@@ -109,7 +113,7 @@ catalog:
     #     - allow: [User, Group]
 
 #kubernetes:
-  # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
+# see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
 
 # see https://backstage.io/docs/permissions/getting-started for more on the permission framework
 permission:
