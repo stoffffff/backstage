@@ -76,7 +76,7 @@ catalog:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location]
+    - allow: [Component, System, API, Resource, Location, Domain]
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
@@ -85,6 +85,11 @@ catalog:
     # Adding the new location of entities for demo purposes:
     - type: file
       target: ../../examples/demo-entities.yaml
+      rules:
+        - allow:
+            - System
+            - Domain
+            - Resource
 
     # stoffffff/platform-engineering-with-backstage REGISTRATION
     - type: url
