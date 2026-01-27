@@ -16,6 +16,15 @@ spec:
   type: team
   children: []
 ---
+# Technical Department BU
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: technical-department
+spec:
+  type: business-unit
+  children: [developers]
+---
 # DEV team
 apiVersion: backstage.io/v1alpha1
 kind: Group
