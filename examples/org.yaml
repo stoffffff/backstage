@@ -23,13 +23,22 @@ metadata:
   name: technical-department
 spec:
   type: business-unit
-  children: [developers]
+  children: ["developers", "platform-engineering"]
 ---
 # DEV team
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
   name: developers
+spec:
+  type: team
+  children: []
+---
+# Platform engineering team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: platform-engineering
 spec:
   type: team
   children: []
