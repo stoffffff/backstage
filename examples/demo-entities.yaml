@@ -36,6 +36,7 @@ metadata:
   description: Service managing checkout
 spec:
   type: service
+  lifecycle: staging
   owner: checkout-squad
   system: checkout-workflow
   consumesApi: flask-stof-api
@@ -52,6 +53,7 @@ metadata:
 spec:
   owner: checkout-squad
   type: openapi
+  system: checkout-workflow
   lifecycle: staging
   apiProvidedBy: component:checkout-service
   definition: |
@@ -78,6 +80,7 @@ metadata:
 spec:
   owner: checkout-squad
   type: openapi
+  system: checkout-workflow
   lifecycle: staging
   apiProvidedBy: component:checkout-service
   definition: |
