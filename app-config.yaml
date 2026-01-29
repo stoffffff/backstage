@@ -72,6 +72,16 @@ auth:
 # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
+  providers:
+    github:
+      my-github-org:
+        organization: "stoffffff"
+        catalogPath: "catalog-info.yaml"
+        filters:
+          branch: "main"
+          repository: ".*"
+        schedule:
+          frequency: { minutes: 20 }
   import:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
