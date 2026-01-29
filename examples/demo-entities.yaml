@@ -1,3 +1,4 @@
+# payments-processing DOMAIN
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
@@ -6,6 +7,7 @@ metadata:
 spec:
   owner: finance-team
 ---
+# checkout-workflow SYSTEM
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
@@ -15,6 +17,7 @@ spec:
   owner: checkout-squad
   domain: payments-processing # Links to the Domain above
 ---
+# checkout-db RESOURCE
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
@@ -24,3 +27,70 @@ spec:
   type: database
   owner: dba-team
   system: checkout-workflow # Links to the System above
+---
+# checkout COMPONENT
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: checkout-service
+  description: Service managing checkout
+spec:
+  type: service
+  owner: checkout-squad
+  system: checkout-workflow
+  consumesApi: flask-stof-api
+  providesApis:
+    - purchase-api
+    - contact-bank-api
+---
+# purchase-api API
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: purchase-api
+  description: API providing payment transactions.
+spec:
+  owner: checkout-squad
+  type: openapi
+  lifecycle: staging
+  apiProvidedBy: component:checkout-service
+  definition: |
+    openapi: "3.0.0"
+    info:
+      version: 1.0.0
+      title: Purchase
+      license:
+        name: stoffffff
+    servers:
+      - url: http://YOUR_SERVER_IP:5000
+    paths:
+      /purchase:
+        get:
+          summary: Payment processing
+    ...
+---
+# contact-bank-api API
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: contact-bank-api
+  description: API to contact bank and card providers
+spec:
+  owner: checkout-squad
+  type: openapi
+  lifecycle: staging
+  apiProvidedBy: component:checkout-service
+  definition: |
+    openapi: "3.0.0"
+    info:
+      version: 1.0.0
+      title: Contact card provider
+      license:
+        name: stoffffff
+    servers:
+      - url: http://YOUR_SERVER_IP:5000
+    paths:
+      /contact-provider:
+        get:
+          summary: Validatin card informations.
+    ...

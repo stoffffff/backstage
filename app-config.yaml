@@ -90,6 +90,8 @@ catalog:
             - System
             - Domain
             - Resource
+            - Component
+            - API
 
     # stoffffff/platform-engineering-with-backstage REGISTRATION
     - type: url
