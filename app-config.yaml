@@ -82,6 +82,7 @@ catalog:
           repository: ".*"
         schedule:
           frequency: { minutes: 20 }
+          timeout: { minutes: 2 }
   import:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
