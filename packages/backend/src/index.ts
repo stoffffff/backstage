@@ -14,7 +14,6 @@ backend.add(import('@backstage/plugin-app-backend'));
 backend.add(import('@backstage/plugin-proxy-backend'));
 
 // github-catalog plugin
-backend.add(import('@backstage/plugin-catalog-backend'));
 backend.add(import('@backstage/plugin-catalog-backend-module-github'));
 
 // scaffolder plugin

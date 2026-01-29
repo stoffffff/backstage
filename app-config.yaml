@@ -76,7 +76,7 @@ catalog:
     github:
       my-github-org:
         organization: "stoffffff"
-        catalogPath: "catalog-info.yaml"
+        catalogPath: "/catalog-info.yaml"
         filters:
           branch: "main"
           repository: ".*"
