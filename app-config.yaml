@@ -3,7 +3,7 @@ app:
   baseUrl: http://localhost:3000
 
 organization:
-  name: github.com/stoffffff
+  name: My Company
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -74,6 +74,15 @@ auth:
 catalog:
   providers:
     github:
+      this-is-for-templates:
+        organization: "stoffffff"
+        catalogPath: "/templates/**/*.yaml"
+        filters:
+          branch: "main"
+          repository: ".*"
+        schedule:
+          frequency: { minutes: 20 }
+          timeout: { minutes: 2 }
       my-github-org:
         organization: "stoffffff"
         catalogPath: "/catalog-info.yaml"
@@ -87,7 +96,7 @@ catalog:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location, Domain]
+    - allow: [Component, System, API, Resource, Location, Domain, Template]
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
