@@ -90,7 +90,7 @@ catalog:
           branch: "main"
           repository: ".*"
         schedule:
-          frequency: { minutes: 20 }
+          frequency: { minutes: 2 }
           timeout: { minutes: 2 }
   import:
     entityFilename: catalog-info.yaml
