@@ -37,9 +37,20 @@ import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { NotificationsPage } from '@backstage/plugin-notifications';
 import { SignalsDisplay } from '@backstage/plugin-signals';
+import { customTheme } from './themes/cool-theme-1';
 
 const app = createApp({
   apis,
+  themes: [
+    {
+      id: 'cool-theme-1',
+      title: 'Aurora Dark',
+      variant: 'dark',
+      Provider: ({ children }) => (
+        <UnifiedThemeProvider theme={customTheme} children={children} />
+      ),
+    },
+  ],
   bindRoutes({ bind }) {
     bind(catalogPlugin.externalRoutes, {
       createComponent: scaffolderPlugin.routes.root,
