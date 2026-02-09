@@ -38,6 +38,7 @@ import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/
 import { NotificationsPage } from '@backstage/plugin-notifications';
 import { SignalsDisplay } from '@backstage/plugin-signals';
 import { customTheme } from './themes/cool-theme-1';
+import { UnifiedThemeProvider } from '@backstage/theme';
 
 const app = createApp({
   apis,
