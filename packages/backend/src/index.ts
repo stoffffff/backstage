@@ -13,6 +13,9 @@ const backend = createBackend();
 backend.add(import('@backstage/plugin-app-backend'));
 backend.add(import('@backstage/plugin-proxy-backend'));
 
+// github-actions plugin
+backend.add(import('@backstage/plugin-auth-backend-module-github-provider'));
+
 // github-catalog plugin
 backend.add(import('@backstage/plugin-catalog-backend-module-github'));
 
